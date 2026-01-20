@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-24.04
     needs:
       - test
+      - job2
     steps:
       - run:  cat /etc/os-release
   
@@ -24,7 +25,12 @@ jobs:
     steps:
     - run: type /etc/os-release
       continue-on-error: false
-      
 
+  job2:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo Job 2
+  
+  
   
   
