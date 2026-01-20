@@ -22,7 +22,8 @@ jobs:
   test:
     runs-on: windows-2022
     steps:
-    - run: echo %OS%
+    - run: type /etc/os-release
+      continue-on-error: false
       
 
   
