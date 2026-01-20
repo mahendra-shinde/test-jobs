@@ -16,12 +16,14 @@ jobs:
     runs-on: ubuntu-24.04
     needs:
       - test
-      - job2
     steps:
       - run:  cat /etc/os-release
   
   test:
     runs-on: windows-2022
+    needs: 
+    - job2
+    
     steps:
     - run: type /etc/os-release
       continue-on-error: false
